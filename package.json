@@ -1,0 +1,41 @@
+{
+  "name": "wedopackagejson",
+  "version": "1.0.0",
+  "description": "package json for wedoapp",
+  "main": "config.js",
+  "scripts": {
+    "test": "lab -t 100",
+    "test-cov-html": "lab -r html -o coverage.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pruksmhc/wedoapp.git"
+  },
+  "keywords": [
+    "productivity",
+    "web",
+    "dev"
+  ],
+  "author": "yadap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pruksmhc/wedoapp/issues"
+  },
+  "homepage": "https://github.com/pruksmhc/wedoapp#readme",
+  "dependencies": {
+    "handlebars": "^4.0.2",
+    "hapi": "^10.0.0",
+    "vision": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-lab": "^1.0.5",
+    "lab": "^5.18.1"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "http://github.com/hapijs/lab/raw/master/LICENSE"
+    }
+  ]
+}
