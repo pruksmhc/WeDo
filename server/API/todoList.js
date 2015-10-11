@@ -2,7 +2,7 @@ var Joi = require('joi'),
     Boom = require('boom'),
     thinky = require('thinky'),
     ToDoItem = rootRequire('model').ToDoItem, 
-    Errors = thinky.Errors,
+    Errors = thinky.Errors, 
     r = thinky.r; 
 
     //Create the API for saving the to-do list. 
@@ -14,7 +14,6 @@ var Joi = require('joi'),
    		title: Joi.string(), 
    		description: Joi.string(), 
    		due_date: Joi.date(), 
-   		completed: Joi.boolean()
    	})
    	if (option && option === 'required') {
         var keys = schema._inner.children.map(function (key) {
@@ -24,9 +23,9 @@ var Joi = require('joi'),
     }
     return schema;
    }
+   //How do you build a serach system? 
    
   function create(request, reply) {
-  
     var newToDoItem = new  ToDoItem(request.payload); 
     newToDoItem.save().then(function (todoItem) {
         reply(todoItem).code(200); //replying to get new locaiton. 
@@ -37,12 +36,43 @@ var Joi = require('joi'),
     });
 };
 
-/**function getAll(request, reply){
-  //you want all of your to do items right, ranked by the due dates (for now), 
-  //then we can change for priorities withint hose due dates. 
-  ToDoItem.get()
+function getAll(request, reply){
+ToDoItem.run().then(function(todos){
+  reply(todos).code(200); //reply with teh todo items that are in there. 
+}).error(function(err){
+  reply(err.message); 
+}); 
+}; 
 
-}**/
+function  getOne(request, reply){
+ToDoItem.get(request.params.id).then(function(todo){
+  reply(todo).code(200); 
+
+}).error(function(err){
+  reply(err.message); 
+})
+}; 
+
+function update(request, reply){
+    request.payload['updated_at'] = new Date(); 
+    ToDoItem.get(request.params.id).update(request.payload).run().then(function(todo){
+      reply(todo).code(200); 
+    }).catch(function(err){
+      reply(err.message); 
+    }); 
+
+}
+
+function remove(request, reply){
+  ToDoItem.get(request.params.id).then(function(todo){
+    todo.delete().then(function(res){
+      reply().code(204); //successful
+    }).error(function(err){
+      reply(err.message); 
+    }); 
+  }); 
+}
+ 
 
 module.exports = {
 	create: {
@@ -50,5 +80,19 @@ module.exports = {
 		description: "creating a new todo item", 
 		notes:"yep", 
 		tags:['APi']
-	}
+	}, 
+  getAll: {
+    handler: getAll, 
+    description: "Getting all the todo  items", 
+    tags: ['API']
+  }, 
+  getOne: {
+    handler: getOne
+  }, 
+  update: {
+    handler: update
+  }, 
+  remove: {
+    handler: remove 
+  }
 }

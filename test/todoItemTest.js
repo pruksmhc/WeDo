@@ -4,7 +4,8 @@ var Lab = require('lab'),
     //  Jwt = require("jsonwebtoken"); 
     server = require('../server.js'),
     expect = Code.expect,
-    paymentID = "";
+    paymentID = "", 
+    todoID = 0; 
 
 
 getToken = function() {
@@ -15,26 +16,76 @@ getToken = function() {
 lab.experiment("ToDoItem", function() {
 
     lab.test('POST /api/v1/todoitem CREATE', function(done) {
-        var token = getToken();
-        var options = {
+        //Creating two todo items. 
+            var options = {
             method: 'POST',
-            url: "/api/v1/todoitem",
+            url: "http://yadas-air:3000/todoitem",
             payload: {
               title: "Yada's Project 2.0",
               description:"I want to complete this website" ,
              due_date: "09/10/2015",
+             priority: 1, 
              complete: true
             }
         }; 
         server.inject(options, function(res) {
            // promocodeID = res.result.id;
-            paymentID = res.result.id;  
+           //TODO: Make sure that the server injeciton. 
+
+            expect(res.statusCode).to.equal(200);
+            console.log("THE RESULT IS "+JSON.stringify(res.result));  
+            todoID = res.result.id; 
+            console.log("The ID gotten of the newly created todo item is "+todoID); 
+         //   expect(res.result.due_date).to.equal(options.payload.due_date); 
+           var options2 = {
+            method: 'POST',
+            url: "http://yadas-air:3000/todoitem",
+            payload: {
+              title: "Yada's Project 3.0",
+              description:"I want to complete this in app version too" ,
+             due_date: "09/10/2015",
+             priority: 2, 
+             complete:  false
+            }
+        }; 
+         server.inject(options2, function(res) {
+            done(); 
+        });
+    });
+}); 
+
+    lab.test('GETALL /todoitem ', function(done) {
+        var options = {
+            method: 'GET',
+            url: "/todoitem"
+        }; 
+        server.inject(options, function(res) {
+           // promocodeID = res.result.id;
+         console.log("THE RESULT IS "+JSON.stringify(res.result)); 
+
+            expect(res.result).to.be.an.array(); 
+            done();
+        })
+    }); 
+
+        lab.test('GET ONE todoitem/{id} ', function(done) {
+        var options = {
+            method: 'GET',
+            url: "/todoitem/"+todoID
+            }
+
+        server.inject(options, function(res) {
             expect(res.statusCode).to.equal(200);
             console.log("THE RESULT IS "+res.result); 
-            expect(res.result.due_date).to.equal(options.payload.due_date); 
             done();
         })
     });
 
-
 });
+
+
+
+
+
+
+

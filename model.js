@@ -8,7 +8,10 @@ var ToDoItem = thinky.createModel('ToDoItem', {
 	title: type.string().required(), 
 	description: type.string(), 
 	due_date: type.date().required(), 
-	complete: type.boolean().required(), 
+	complete: type.boolean().default(false), 
+	priority: type.number(),  
+    collaborators: type.boolean().default(false), 
+    collabList: type.string(), 
 	created_at: type.date().default(r.now()), 
 	updated_At:type.date().default(r.now())
 }); 

@@ -35,3 +35,63 @@
 2015-09-27T14:22:51.064566000 67.511299s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Added replica on this server.
 2015-09-27T14:22:52.886749000 69.333481s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 1.
 2015-09-27T14:22:52.918220000 69.364950s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 1. Latest log index is 0.
+2015-10-10T16:31:59.923631000 0.675264s notice: Running rethinkdb 2.1.1 (CLANG 6.1.0 (clang-602.0.53))...
+2015-10-10T16:31:59.973075000 0.724706s notice: Running on Darwin 14.4.0 x86_64
+2015-10-10T16:31:59.973133000 0.724762s notice: Loading data from directory /Users/yadap/Desktop/weDoApp/rethinkdb_data
+2015-10-10T16:32:00.044057000 0.795686s info: Automatically using cache size of 100 MB
+2015-10-10T16:32:00.044074000 0.795703s warn: Cache size does not leave much memory for server and query overhead (available memory: 602 MB).
+2015-10-10T16:32:00.044084000 0.795712s warn: Cache size is very low and may impact performance.
+2015-10-10T16:32:00.048058000 0.799687s notice: Listening for intracluster connections on port 29015
+2015-10-10T16:32:00.098440000 0.850070s notice: Listening for client driver connections on port 28015
+2015-10-10T16:32:00.098648000 0.850277s notice: Listening for administrative HTTP connections on port 8080
+2015-10-10T16:32:00.098650000 0.850278s notice: Listening on addresses: 127.0.0.1, ::1
+2015-10-10T16:32:00.098656000 0.850284s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-10-10T16:32:00.098657000 0.850285s notice: Server ready, "n194_62_mtholyoke_edu_pea" a6644e0e-8f93-4ae2-92c1-a9c0e12cde9a
+2015-10-10T16:32:00.628934000 1.380563s notice: A newer version of the RethinkDB server is available: 2.1.5-2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-10-10T16:32:01.771399000 2.523026s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 2.
+2015-10-10T16:32:01.801974000 2.553601s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 2. Latest log index is 3.
+2015-10-10T19:06:36.960906000 6252.459587s notice: Server got SIGINT from pid 227, uid 501; shutting down...
+2015-10-10T19:06:36.963494000 6252.462172s notice: Shutting down client connections...
+2015-10-10T19:06:36.965008000 6252.463686s notice: All client connections closed.
+2015-10-10T19:06:36.965024000 6252.463702s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-10-10T19:06:37.020653000 6252.519332s notice: Storage engine shut down.
+2015-10-10T22:47:34.094794000 0.420119s notice: Running rethinkdb 2.1.1 (CLANG 6.1.0 (clang-602.0.53))...
+2015-10-10T22:47:34.167246000 0.492565s notice: Running on Darwin 14.4.0 x86_64
+2015-10-10T22:47:34.167288000 0.492605s notice: Loading data from directory /Users/yadap/Desktop/weDoApp/rethinkdb_data
+2015-10-10T22:47:34.219638000 0.544955s info: Automatically using cache size of 100 MB
+2015-10-10T22:47:34.219648000 0.544965s warn: Cache size does not leave much memory for server and query overhead (available memory: 783 MB).
+2015-10-10T22:47:34.219653000 0.544970s warn: Cache size is very low and may impact performance.
+2015-10-10T22:47:34.224114000 0.549431s notice: Listening for intracluster connections on port 29015
+2015-10-10T22:47:34.285425000 0.610743s notice: Listening for client driver connections on port 28015
+2015-10-10T22:47:34.285741000 0.611059s notice: Listening for administrative HTTP connections on port 8080
+2015-10-10T22:47:34.285745000 0.611062s notice: Listening on addresses: 127.0.0.1, ::1
+2015-10-10T22:47:34.285869000 0.611186s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-10-10T22:47:34.285871000 0.611188s notice: Server ready, "n194_62_mtholyoke_edu_pea" a6644e0e-8f93-4ae2-92c1-a9c0e12cde9a
+2015-10-10T22:47:34.470149000 0.795466s notice: A newer version of the RethinkDB server is available: 2.1.5-2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-10-10T22:47:35.346288000 1.671604s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 3.
+2015-10-10T22:47:35.373243000 1.698559s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 3. Latest log index is 6.
+2015-10-11T00:08:54.931851000 4881.251819s notice: Server got SIGINT from pid 227, uid 501; shutting down...
+2015-10-11T00:08:54.932073000 4881.252041s notice: Shutting down client connections...
+2015-10-11T00:08:54.932305000 4881.252273s notice: All client connections closed.
+2015-10-11T00:08:54.932316000 4881.252283s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-10-11T00:08:54.963808000 4881.283776s notice: Storage engine shut down.
+2015-10-11T00:08:56.327701000 0.013325s notice: Running rethinkdb 2.1.1 (CLANG 6.1.0 (clang-602.0.53))...
+2015-10-11T00:08:56.418073000 0.103690s notice: Running on Darwin 14.4.0 x86_64
+2015-10-11T00:08:56.418155000 0.103769s notice: Loading data from directory /Users/yadap/Desktop/weDoApp/rethinkdb_data
+2015-10-11T00:08:56.491135000 0.176749s info: Automatically using cache size of 100 MB
+2015-10-11T00:08:56.491156000 0.176770s warn: Cache size does not leave much memory for server and query overhead (available memory: 494 MB).
+2015-10-11T00:08:56.491169000 0.176783s warn: Cache size is very low and may impact performance.
+2015-10-11T00:08:56.492498000 0.178112s notice: Listening for intracluster connections on port 29015
+2015-10-11T00:08:56.571767000 0.257382s notice: Listening for client driver connections on port 28015
+2015-10-11T00:08:56.572303000 0.257918s notice: Listening for administrative HTTP connections on port 8080
+2015-10-11T00:08:56.572333000 0.257947s notice: Listening on addresses: 127.0.0.1, ::1
+2015-10-11T00:08:56.572336000 0.257950s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-10-11T00:08:56.572340000 0.257954s notice: Server ready, "n194_62_mtholyoke_edu_pea" a6644e0e-8f93-4ae2-92c1-a9c0e12cde9a
+2015-10-11T00:08:56.707942000 0.393556s notice: A newer version of the RethinkDB server is available: 2.1.5-2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2015-10-11T00:08:58.238823000 1.924435s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 4.
+2015-10-11T00:08:58.266642000 1.952254s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 4. Latest log index is 9.
+2015-10-11T00:09:11.287693000 14.973293s notice: Server got SIGINT from pid 227, uid 501; shutting down...
+2015-10-11T00:09:11.287866000 14.973465s notice: Shutting down client connections...
+2015-10-11T00:09:11.288001000 14.973600s notice: All client connections closed.
+2015-10-11T00:09:11.288009000 14.973607s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-10-11T00:09:11.294867000 14.980464s notice: Storage engine shut down.

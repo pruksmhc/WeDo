@@ -1,7 +1,7 @@
 
 
 var spawn = require('child_process').spawn;
-var Config = require('../config');
+var Config = require('config.js');
 
 // returns function to kill the spawned rethinkdb
 module.exports = function startRethinkDb(cwd, testing) {

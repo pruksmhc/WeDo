@@ -2,79 +2,96 @@ global.rootRequire = function(name) {
     return require(__dirname + '/' + name);
 };
 
-var Hapi = require('hapi'),
-    config = rootRequire('config')(), 
+var Hapi = require('hapi'), 
+config = rootRequire("config.js"); 
     todoItemAPI = rootRequire('server/API/todoList.js')
  
    // Routes = rootRequire('server/routes'),
    // Validate = rootRequire('server/validate');
 
 // Start hapi server
-var server = new Hapi.S erver();
+var server = new Hapi.Server();
 
 // Set up server connection through config
-server.connection(config.server);
 
-server.register(require('vision'), function (err) {
-    server.route({
+server.connection({ port: 3000 });
+
+server.register(require('inert'), function (err) {
+    /**server.route({
         engines: {
             html: require('handlebars')
         },
         path: 'templates', 
         isCached: false 
-    });
-});
+    });**/ 
+   if (err) {
+        throw err;
+    }
 
-var extension = "/api/v1/"; 
 server.route({
     method: 'GET',
     path:"/", 
     handler: function(request, reply){
-        reply.view("todoPage");  //k here, tbhe routes are used for hte PA
+        reply.file("templates/todoPage.html"); //To do page. 
     }
 }
 ) 
+
 server.route(
     {
         method:"POST", 
-        path:"/api/v1/todoitem", 
+        path:"/todoitem", 
        config:  todoItemAPI.create
     }
-)
+) 
 
-if (process.env.NODE_ENV === 'production') { 
-    //ifthe process is from production. 
-    server.register([=
-        {
-            register: require('hapi-auth-jwt')
+//get all. 
+server.route(
+{
+    method:"GET", 
+    path:"/todoitem", 
+    config: todoItemAPI.getAll
+}); 
+//do the todo item get one. 
+server.route({
+    method:"GET", 
+    path:"/todoitem/{id}" , 
+    config: todoItemAPI.getOne
+}); 
+server.route({
+    method:"DELETE", 
+    path: "/todoitem/{id}", 
+    config: todoItemAPI.remove
+}); 
+
+server.route({
+    method:"PUT", 
+    path:"/todoitem/{id}", 
+    config: todoItemAPI.update
+}); 
+
+
+
+server.route(
+    {
+        method:"GET", 
+        path:"/app.js", 
+        handler: function(request, reply){
+            reply.file("app.js");  //in here, tbhe routes are used for hte PA
         }
-    ], function (err) {
-        if (err) {
-            console.error('Failed to load a plugin:', err);
-        } else {
-            server.auth.strategy('token', 'jwt', {
-               // validateFunc: Validate.validate,
-             //   key: config.auth.privateKey
-            });
+    }
+); 
+
+  server.start(function () {
+     if (err) {
+            throw err;
         }
+        console.log('Server running at:', server.info.uri);
     });
-}
+
+});
+
+module.exports = server;
 
 // Add route to serverserver.route(Routes);
 
-// Add 404 handler
-server.ext('onPreResponse', function (request, reply) {
-    if (request.response.isBoom && request.response.output.statusCode === 404) {
-        return reply.redirect('/');
-    }
-    return reply.continue();
-});
-
-if (!module.parent) { // Prevent server from starting when module is used in testing
-    // Start server
-    server.start(function () {
-        console.log('Server running at:', server.info.uri);
-    });
-}
-
-module.exports = server; // Export server as a module for testing
