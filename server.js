@@ -30,12 +30,23 @@ server.register(require('inert'), function (err) {
 
 server.route({
     method: 'GET',
-    path:"/", 
+    path:"/create", 
     handler: function(request, reply){
         reply.file("templates/todoPage.html"); //To do page. 
     }
 }
 ) 
+server.route({
+    method: "GET",
+    path: "/{path*}",
+    handler: {
+        directory: {
+            path: "./templates",
+            listing: false,
+            index: false
+        }
+    }
+});
 
 server.route(
     {
@@ -45,6 +56,13 @@ server.route(
     }
 ) 
 
+server.route({
+    method:"GET", 
+    path:"/home", 
+    handler:function(reqeust, reply){
+        reply.file("templates/homepage.html"); 
+    }
+})
 //get all. 
 server.route(
 {
@@ -53,6 +71,9 @@ server.route(
     config: todoItemAPI.getAll
 }); 
 //do the todo item get one. 
+
+
+
 server.route({
     method:"GET", 
     path:"/todoitem/{id}" , 

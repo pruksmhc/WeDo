@@ -1,0 +1,26 @@
+
+$primaryColor: #eeffcc
+body {
+    background-color: $primaryColor; 
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+p{
+  animation-name: colorChange;
+  animation-duration: 4s;
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+@keyframes colorChange {
+    from {color: red;}
+    to {color: yellow;}
+}
+
+p::hover {
+ color: #ff7b29;
+}
