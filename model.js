@@ -11,7 +11,8 @@ var ToDoItem = thinky.createModel('ToDoItem', {
 	complete: type.boolean().default(false), 
 	priority: type.number(),  
     collaborators: type.boolean().default(false), 
-    collabList: type.string(), 
+    collabList: type.string(),  
+    tag_words: type.string(), 
 	created_at: type.date().default(r.now()), 
 	updated_At:type.date().default(r.now())
 }); 

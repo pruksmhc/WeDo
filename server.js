@@ -47,6 +47,11 @@ server.route({
         }
     }
 });
+server.route({
+    method:"GET", 
+    path:"/{tag_words}", 
+    config: todoItemAPI.searchTag
+})
 
 server.route(
     {

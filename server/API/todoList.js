@@ -13,7 +13,8 @@ var Joi = require('joi'),
    	var schema = Joi.object().keys({
    		title: Joi.string(), 
    		description: Joi.string(), 
-   		due_date: Joi.date(), 
+   		due_date: Joi.date(),  
+      tag_words: Joi.string()
    	})
    	if (option && option === 'required') {
         var keys = schema._inner.children.map(function (key) {
@@ -62,6 +63,11 @@ function update(request, reply){
     }); 
 
 }
+ 
+ function searchTagWords(request, reply){
+  //TODO search by tag words. 
+ }
+
 
 function remove(request, reply){
   ToDoItem.get(request.params.id).then(function(todo){
@@ -85,6 +91,9 @@ module.exports = {
     handler: getAll, 
     description: "Getting all the todo  items", 
     tags: ['API']
+  },  
+  searchTag:{
+    handler: searchTagWords
   }, 
   getOne: {
     handler: getOne

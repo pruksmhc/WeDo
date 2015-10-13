@@ -110,3 +110,18 @@
 2015-10-11T09:18:10.901591000 0.778224s notice: A newer version of the RethinkDB server is available: 2.1.5-2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
 2015-10-11T09:18:12.404654000 2.281284s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 5.
 2015-10-11T09:18:12.439377000 2.316007s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 5. Latest log index is 12.
+2015-10-12T20:53:19.108371000 0.233371s notice: Running rethinkdb 2.1.1 (CLANG 6.1.0 (clang-602.0.53))...
+2015-10-12T20:53:19.171971000 0.296992s notice: Running on Darwin 14.4.0 x86_64
+2015-10-12T20:53:19.172076000 0.297069s notice: Loading data from directory /Users/yadap/Desktop/weDoApp/rethinkdb_data
+2015-10-12T20:53:19.234192000 0.359184s info: Automatically using cache size of 100 MB
+2015-10-12T20:53:19.234204000 0.359195s warn: Cache size does not leave much memory for server and query overhead (available memory: 558 MB).
+2015-10-12T20:53:19.234219000 0.359211s warn: Cache size is very low and may impact performance.
+2015-10-12T20:53:19.235125000 0.360117s notice: Listening for intracluster connections on port 29015
+2015-10-12T20:53:19.293175000 0.418168s notice: Listening for client driver connections on port 28015
+2015-10-12T20:53:19.293952000 0.418945s notice: Listening for administrative HTTP connections on port 8080
+2015-10-12T20:53:19.293958000 0.418950s notice: Listening on addresses: 127.0.0.1, ::1
+2015-10-12T20:53:19.293964000 0.418956s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-10-12T20:53:19.293966000 0.418957s notice: Server ready, "n194_62_mtholyoke_edu_pea" a6644e0e-8f93-4ae2-92c1-a9c0e12cde9a
+2015-10-12T20:53:21.276006000 2.400996s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: Starting a new Raft election for term 6.
+2015-10-12T20:53:21.304497000 2.429488s info: Table 5264e94e-e32e-4498-9184-986ed3666d27: This server is Raft leader for term 6. Latest log index is 15.
+2015-10-12T20:53:22.522143000 3.647132s notice: A newer version of the RethinkDB server is available: 2.1.5-2. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
