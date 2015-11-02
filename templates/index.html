@@ -1,0 +1,43 @@
+<!---THs ion ewill contain the fnacy MVC, with the headers, and teh different seprated vicews.-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+<!-- Meta-Information -->
+<!-- etc… -->
+
+<!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
+<!-- etc… -->
+
+<!-- Our Website CSS Styles -->
+
+
+</head>
+<body <span class="highlight">ng-app="wedoApp"</span>>
+<!--[if lt IE 7]>-->
+
+
+
+<div <span class="highlight">ng-view</span>></div>
+<div <span class="highlight">ng-include='"footer.html"'</span>></div>
+
+<!-- Vendor: Javascripts -->
+<!-- etc… -->
+
+<span class="highlight"><!-- Vendor: Angular, followed by our custom Javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script></span>
+
+<!-- Our Website Javascripts -->
+<script src="js/controllers.js"></script>
+
+</body>
+</html>

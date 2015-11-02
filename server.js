@@ -34,8 +34,14 @@ server.route({
     handler: function(request, reply){
         reply.file("templates/todoPage.html"); //To do page. 
     }
-}
-) 
+}), 
+server.route({
+     method: 'GET',
+    path:"/loggedIn", 
+    handler: function(request, reply){
+        reply.file("templates/index.html"); //To do page. 
+    }
+}), 
 server.route({
     method: "GET",
     path: "/{path*}",
@@ -47,11 +53,13 @@ server.route({
         }
     }
 });
-server.route({
+
+
+/**server.route({
     method:"GET", 
     path:"/{tag_words}", 
     config: todoItemAPI.searchTag
-})
+})**/
 
 server.route(
     {
@@ -63,7 +71,7 @@ server.route(
 
 server.route({
     method:"GET", 
-    path:"/home", 
+    path:"/", 
     handler:function(reqeust, reply){
         reply.file("templates/homepage.html"); 
     }
@@ -95,6 +103,7 @@ server.route({
     path:"/todoitem/{id}", 
     config: todoItemAPI.update
 }); 
+
 
 
 

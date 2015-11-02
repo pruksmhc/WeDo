@@ -23,7 +23,8 @@ lab.experiment("ToDoItem", function() {
             payload: {
               title: "Yada's Project 2.0",
               description:"I want to complete this website" ,
-             due_date: "09/10/2015",
+             due_date: "09/10/2015", 
+             tag_words:"SideProject", 
              priority: 1, 
              complete: true
             }
@@ -31,30 +32,17 @@ lab.experiment("ToDoItem", function() {
         server.inject(options, function(res) {
            // promocodeID = res.result.id;
            //TODO: Make sure that the server injeciton. 
-
             expect(res.statusCode).to.equal(200);
             console.log("THE RESULT IS "+JSON.stringify(res.result));  
             todoID = res.result.id; 
             console.log("The ID gotten of the newly created todo item is "+todoID); 
          //   expect(res.result.due_date).to.equal(options.payload.due_date); 
-           var options2 = {
-            method: 'POST',
-            url: "http://yadas-air:3000/todoitem",
-            payload: {
-              title: "Yada's Project 3.0",
-              description:"I want to complete this in app version too" ,
-             due_date: "09/10/2015",
-             priority: 2, 
-             complete:  false
-            }
-        }; 
-         server.inject(options2, function(res) {
-            done(); 
-        });
+         done(); 
+          
     });
 }); 
 
-    lab.test('GETALL /todoitem ', function(done) {
+  /**  lab.test('GETALL /todoitem ', function(done) {
         var options = {
             method: 'GET',
             url: "/todoitem"
@@ -62,12 +50,23 @@ lab.experiment("ToDoItem", function() {
         server.inject(options, function(res) {
            // promocodeID = res.result.id;
          console.log("THE RESULT IS "+JSON.stringify(res.result)); 
-
             expect(res.result).to.be.an.array(); 
             done();
         })
-    }); 
+    }); **/ 
+  /**    lab.test("Testing if the queries for the search words are successfulk", function(done){
+            var options = {
+            method: 'GET',
+            url: "/SideProject"
+            }
+            server.inject(options, function(res){
+              console.log("Got these objects "+JSON.stringify(res.result)); 
+              expect(res.result).to.be.an.object(); 
+              done(); 
+            })
 
+      }); **/
+        
         lab.test('GET ONE todoitem/{id} ', function(done) {
         var options = {
             method: 'GET',
@@ -76,10 +75,38 @@ lab.experiment("ToDoItem", function() {
 
         server.inject(options, function(res) {
             expect(res.statusCode).to.equal(200);
-            console.log("THE RESULT IS "+res.result); 
+            console.log("THE RESULT IS "+JSON.stringify(res.result)); 
             done();
         })
     });
+
+        lab.test("Deletng that item, jsut to keep form cluttering any more", function(done){
+          var options = {
+            method: 'DELETE', 
+            url: '/todoitem/'+todoID
+          }; 
+           server.inject(options, function(res) {
+            expect(res.statusCode).to.equal(204);  //delet ethis. 
+            done();
+        })
+        })
+            
+
+        lab.test("Getting all thetodo items", function(done){
+          var options = {
+            method: "GET", 
+            url:"/todoitem"
+          }
+          server.inject(options, function(res){
+         expect(res.statusCode).to.equal(200);
+            console.log("THE RESULT IS  an array of "+JSON.stringify(res.result)); 
+            done();
+          }); 
+
+        }); 
+
+//Must crete a log in flow as well. 
+
 
 });
 

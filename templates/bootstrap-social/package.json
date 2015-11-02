@@ -1,0 +1,68 @@
+{
+  "_args": [
+    [
+      "bootstrap-social",
+      "/Users/yadap/Desktop/weDoApp"
+    ]
+  ],
+  "_from": "bootstrap-social@*",
+  "_id": "bootstrap-social@4.9.1",
+  "_inCache": true,
+  "_location": "/bootstrap-social",
+  "_nodeVersion": "0.12.2",
+  "_npmUser": {
+    "email": "lipiridis@gmail.com",
+    "name": "lipis"
+  },
+  "_npmVersion": "2.7.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "bootstrap-social",
+    "raw": "bootstrap-social",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/bootstrap-social/-/bootstrap-social-4.9.1.tgz",
+  "_shasum": "fd6f25f09b4057d1fa185ac25b1ee64210734e25",
+  "_shrinkwrap": null,
+  "_spec": "bootstrap-social",
+  "_where": "/Users/yadap/Desktop/weDoApp",
+  "bugs": {
+    "url": "https://github.com/lipis/bootstrap-social/issues"
+  },
+  "dependencies": {
+    "bootstrap": "~3",
+    "font-awesome": "~4.3"
+  },
+  "description": "Social Buttons for Bootstrap ============================",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "fd6f25f09b4057d1fa185ac25b1ee64210734e25",
+    "tarball": "http://registry.npmjs.org/bootstrap-social/-/bootstrap-social-4.9.1.tgz"
+  },
+  "gitHead": "9f2d8bf2acb5583a70ff3a3ab584708b88e0650f",
+  "homepage": "https://github.com/lipis/bootstrap-social",
+  "installable": true,
+  "license": "MIT",
+  "main": "bootstrap-social.css",
+  "maintainers": [
+    {
+      "name": "lipis",
+      "email": "lipiridis@gmail.com"
+    }
+  ],
+  "name": "bootstrap-social",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lipis/bootstrap-social.git"
+  },
+  "scripts": {},
+  "version": "4.9.1"
+}

@@ -30,7 +30,7 @@ var Joi = require('joi'),
     var newToDoItem = new  ToDoItem(request.payload); 
     newToDoItem.save().then(function (todoItem) {
         reply(todoItem).code(200); //replying to get new locaiton. 
-        //replysaying that the new todo item has bene created. 
+        //reply saying that the new todo item has been created. 
     }).error(function (err) {
       console.log("THE ERROR IS "+err); 
         //reply(Boom.badImplementation(err.message));
@@ -40,8 +40,11 @@ var Joi = require('joi'),
 function getAll(request, reply){
 ToDoItem.run().then(function(todos){
   reply(todos).code(200); //reply with teh todo items that are in there. 
+  //does this actually display the the to-do item?  
+  //So use Bootstrap to create the template, k so how should this lok like. 
+  //This is the msot improatnt part, and then to display this. 
 }).error(function(err){
-  reply(err.message); 
+  reply(err.message).code(200); 
 }); 
 }; 
 
@@ -59,15 +62,21 @@ function update(request, reply){
     ToDoItem.get(request.params.id).update(request.payload).run().then(function(todo){
       reply(todo).code(200); 
     }).catch(function(err){
-      reply(err.message); 
+      reply(err.message).code(500); //replyign with an internal error. 
     }); 
 
 }
  
- function searchTagWords(request, reply){
-  //TODO search by tag words. 
+/** function searchTagWords(request, reply){
+  //TODO search by tag words.  
+   console.log("The tags being queried are "+request.payload); 
+   ToDoItem.filter(r.row("tag_words").eq(request.payload,tag_words)).then(function(data){
+    reply(data).code(201); //return ign the queried stag words. 
+   }).error(function(err){
+    reply(err.message).code(500); 
+   })
  }
-
+/)**/ 
 
 function remove(request, reply){
   ToDoItem.get(request.params.id).then(function(todo){
@@ -91,10 +100,10 @@ module.exports = {
     handler: getAll, 
     description: "Getting all the todo  items", 
     tags: ['API']
-  },  
+  }/**,  
   searchTag:{
     handler: searchTagWords
-  }, 
+  },**/ , 
   getOne: {
     handler: getOne
   }, 

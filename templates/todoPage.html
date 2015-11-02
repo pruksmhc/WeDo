@@ -14,9 +14,16 @@
 
   <button style="color:rgb(39,98,117)"  type="button" class="btn btn-default" ng-click="generateTodoItem()">Submit Entry</button>
 <p>{{firstName}}</p>
-<script>
+<script> 
+//define the naualr js  first. 
 var app = angular.module('myApp', []);
 app.controller('todoPageController', function($scope, $http) {
+
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    console.log("Facebook login "+JSON.stringify(response)); 
+  });
+
 	console.log("WOAH"); 
     $scope.duedate = ""; 
     $scope.todoTitle = ""; 
@@ -44,6 +51,7 @@ $scope.generateTodoItem = function(){
 
 });
 </script>
+<span class="highlight"><script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script></span
 </body>
 
 </html>

@@ -15,7 +15,11 @@ var ToDoItem = thinky.createModel('ToDoItem', {
     tag_words: type.string(), 
 	created_at: type.date().default(r.now()), 
 	updated_At:type.date().default(r.now())
-}); 
+});  
+
+//there re many todoitems to users, so youw ant to have a one to many relaiton. 
+
+
 
 module.exports = {
     //get the location. 

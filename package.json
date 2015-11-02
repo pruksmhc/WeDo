@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/pruksmhc/wedoapp#readme",
   "dependencies": {
+    "del": "^2.0.2",
     "handlebars": "^4.0.2",
     "hapi": "^10.0.0",
     "vision": "^3.0.0"
