@@ -8,8 +8,9 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html ng-app="wedoApp"> <!--<![endif]-->
 <head>
+
 
 <!-- Meta-Information -->
 <!-- etc… -->
@@ -18,26 +19,47 @@
 <!-- etc… -->
 
 <!-- Our Website CSS Styles -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Custom CSS -->
 
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+         <link href="bootstrap-social/bootstrap-social.css" rel="stylesheet" >
+                  <link href="home.css" rel="stylesheet" >
+
+
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+ <script src="js/angular-ui-router.min.js"></script>
 
 </head>
-<body <span class="highlight">ng-app="wedoApp"</span>>
 <!--[if lt IE 7]>-->
+<body>
 
+<section id ="about" class = "container text-center"> 
 
+<div class="container">
+ <div ng-include src="'header.html'"></div>
 
-<div <span class="highlight">ng-view</span>></div>
-<div <span class="highlight">ng-include='"footer.html"'</span>></div>
+  <div class="col-xs-6">
+          <div ui-view></div>
+      </div>
+      </div>
+      </section>
 
 <!-- Vendor: Javascripts -->
 <!-- etc… -->
 
 <span class="highlight"><!-- Vendor: Angular, followed by our custom Javascripts -->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script></span>
+ <script src="js/angular-ui-router.min.js"></script>
 
 <!-- Our Website Javascripts -->
 <script src="js/controllers.js"></script>
+</span>
 
 </body>
 </html>

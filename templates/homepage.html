@@ -34,6 +34,9 @@
     <![endif]-->
 
     <!--Angular js-->
+        <script src="js/jquery/dist/jquery.js"></script>
+    <script src="js/jquery/dist/jquery.min.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script></span>
   <script src="node_modules/angular/angular.js"></script>
@@ -121,7 +124,7 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-        window.location = "http://yadas-macbook-air.local:3000/loggedIn"; 
+      //  window.location = "http://yadas-macbook-air.local:3000/loggedIn"; 
     });
   }
 </script>
@@ -180,14 +183,18 @@
 </section>
 <section id ="about" class = "about container text-center"> 
 <h3>Bringing the power of focus groups to the web. </h3>
-<div class="container">
- <div ng-include="'footer.html'"></div>
- </div>
 </section>
+
 
  <Section id = "features" class = "features container text-center">
  <h5>After signing up for a free trial of WeDo, you can add up to two projects that you would like to work on. After tagging your product and creating some initial to-dos, explore the projects that other people are doing. Find someone or a project that you like? Message that person, and if you are a good match, merge to-do lists! From there, you will get a mail notification (or push notification) when the other person completes a to-do item in tehir list. See the other is slacking? Help motivate the other person by notifyng them that you have seen their late to-do items. Productivity is always better with two!</h5>
 <!-- THIS IS THE MODAL FOR LOGIN -->
+ <div ng-include src="'/footer.html'"></div>
+
+</Section>
+
+
+
 <div class="modal fade" id = "loginModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -213,12 +220,12 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
     <script src="js/jquery/dist/jquery.js"></script>
+    <script src="js/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <!-- Plugin JavaScript -->
-    <script src="js/jquery/jquery.min.js"></script>
-
+    
 </body>
 
 </html>

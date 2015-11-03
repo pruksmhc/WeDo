@@ -28,13 +28,7 @@ server.register(require('inert'), function (err) {
         throw err;
     }
 
-server.route({
-    method: 'GET',
-    path:"/create", 
-    handler: function(request, reply){
-        reply.file("templates/todoPage.html"); //To do page. 
-    }
-}), 
+
 server.route({
      method: 'GET',
     path:"/loggedIn", 
@@ -76,6 +70,13 @@ server.route({
         reply.file("templates/homepage.html"); 
     }
 })
+server.route({
+    method:"GET", 
+    path:"/footer.html", 
+    handler:function(reqeust, reply){
+        reply.file("templates/footer.html"); 
+    }
+})
 //get all. 
 server.route(
 {
@@ -85,7 +86,13 @@ server.route(
 }); 
 //do the todo item get one. 
 
-
+server.route({
+    method: "GET", 
+    path:"/dashboard" , 
+    handler:function(request, reply){
+        reply.file("templates/dashboard.html")
+    }
+})
 
 server.route({
     method:"GET", 
