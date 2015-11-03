@@ -24,7 +24,10 @@ p{
 p::hover {
  color: #ff7b29;
 }
+.add-project {
+  margin-top:50px; 
 
+}
 .about {
     margin-top: 100px;
     display: table;
@@ -42,5 +45,12 @@ p::hover {
 
   .features{
     margin-top:100px;
+  }
+  .title{
+    margin-top:100px;
+  }
+
+  .create {
+    margin-left:280px;
   }
 

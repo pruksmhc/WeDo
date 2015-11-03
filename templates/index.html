@@ -27,25 +27,80 @@
          <link href="bootstrap-social/bootstrap-social.css" rel="stylesheet" >
                   <link href="home.css" rel="stylesheet" >
 
+<!-- CUSTOM CSS -->
 
+                  <link href="home.css" rel="stylesheet" >
+
+<!--Angular-->
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
  <script src="js/angular-ui-router.min.js"></script>
 
+<!--JQUERY -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 </head>
 <!--[if lt IE 7]>-->
 <body>
 
-<section id ="about" class = "container text-center"> 
+<section id ="create" class = "container text-center"> 
 
 <div class="container">
  <div ng-include src="'header.html'"></div>
+      </div>
 
-  <div class="col-xs-6">
-          <div ui-view></div>
-      </div>
-      </div>
+
+
+
+      <h3 class ="title">Create a new Project</h3>
+
+<div class="create container">
+  
+<div class="row">
+<form role="form" class="col-xs-6">
+  <div class="form-group">
+    <label for="code" ng-model = "todoTitle">Title</label>
+    <input type="text" ng-model = "todoTitle" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="code" ng-model = "tododescription">Description</label>
+    <input type="text" g-model = "tododescription" class="form-control"/>
+  </div>
+  <p>Date Due <input type="text" ng-model = "duedate" id="datepicker"   ></p>
+
+<form id="tags" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Tags</label>
+        <div class="col-xs-8">
+            <input type="text" name="cities" class="form-control"
+                   value="Cool project" data-role="tagsinput" />
+        </div>
+    </div>
+  </div>
+  </div>
+</form>
+
+<button type="button" class= "btn add-project" ng-controller="CreateProjectController" ng-click="generateTodoItem()">Add a new project
+</div>
+
+</form>
+</div>
+
+
+  <!--The date, and tags -->
+  
+
+
+
       </section>
 
 <!-- Vendor: Javascripts -->
